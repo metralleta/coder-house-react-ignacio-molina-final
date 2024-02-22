@@ -2,14 +2,13 @@ import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import ItemList from '../ItemList/ItemList'
 import Spinner from '../Spinner/Spinner'
-// Importa los módulos necesarios de Firestore
 import { getFirestore, collection, getDocs, query, where } from 'firebase/firestore'
 
 function ItemListContainer() {
     const [items, setItems] = useState([])
     const [loading, setLoading] = useState(true)
 
-    const { categoryId } = useParams() // Obtener categoryId de la URL
+    const { categoryId } = useParams()
 
     useEffect(() => {
         const fetchItems = async () => {

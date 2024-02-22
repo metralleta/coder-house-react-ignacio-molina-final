@@ -5,7 +5,7 @@ function Item({ itemDetail }) {
         <div className="item">
             <h3>{itemDetail.title}</h3>
             <img src={itemDetail.image} alt={itemDetail.title} />
-            <p>{itemDetail.price}</p>
+            <p>u$s {itemDetail.price}</p>
             <Link className="button-cart" to={`/item/${itemDetail.id}`}>
                 Ver detalles
             </Link>

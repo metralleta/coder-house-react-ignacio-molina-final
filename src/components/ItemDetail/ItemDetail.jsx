@@ -27,7 +27,7 @@ function ItemDetail({ itemDetail }) {
         <div className="item-detail">
             <h2>{itemDetail.title}</h2>
             <img src={itemDetail.image} alt={itemDetail.title} />
-            <p>{itemDetail.price}</p>
+            <p>u$s {itemDetail.price}</p>
             <p>{itemDetail.description}</p>
             {quantityAdded > 0 ? (
                 <Link className="button-cart" to="/cart">
