@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import ItemList from '../ItemList/ItemList'
 import Spinner from '../Spinner/Spinner'
+// Importa los módulos necesarios de Firestore
+import { getFirestore, collection, getDocs, query, where } from 'firebase/firestore'
 
 function ItemListContainer() {
     const [items, setItems] = useState([])
@@ -12,16 +14,20 @@ function ItemListContainer() {
     useEffect(() => {
         const fetchItems = async () => {
             setLoading(true)
+            const db = getFirestore()
+            const itemsCollection = collection(db, 'articulos')
             try {
-                let url = 'https://fakestoreapi.com/products'
+                let q
                 if (categoryId) {
-                    url += `/category/${categoryId}`
+                    q = query(itemsCollection, where('category', '==', categoryId))
+                } else {
+                    q = query(itemsCollection)
                 }
-                const response = await fetch(url)
-                const data = await response.json()
-                setItems(data)
+                const querySnapshot = await getDocs(q)
+                const itemsArray = querySnapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }))
+                setItems(itemsArray)
             } catch (error) {
-                console.log('Error en el fetch a la API: ', error)
+                console.log('Error al consultar Firestore: ', error)
             } finally {
                 setLoading(false)
             }
@@ -30,11 +36,7 @@ function ItemListContainer() {
         fetchItems()
     }, [categoryId]) // Añadir categoryId como dependencia del useEffect
 
-    return (
-        <section>
-            {loading ? <Spinner /> : <ItemList items={items} />}
-        </section>
-    )
+    return <section>{loading ? <Spinner /> : <ItemList items={items} />}</section>
 }
 
 export default ItemListContainer
