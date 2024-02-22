@@ -15,10 +15,10 @@ function NavBar() {
                     <div className="list-menu">
                         <ul>
                             <li>
-                                <Link to="/category/jewelery">Electronics</Link>
+                                <Link to="/category/jewelery">Jewelery</Link>
                             </li>
                             <li>
-                                <Link to="/category/electronics">Jewelery</Link>
+                                <Link to="/category/electronics">Electronics</Link>
                             </li>
                             <li>
                                 <Link to="/category/men's clothing">Men's Clothing</Link>
