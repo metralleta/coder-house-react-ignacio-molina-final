@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 import ItemList from '../ItemList/ItemList'
 import Spinner from '../Spinner/Spinner'
 import { getFirestore, collection, getDocs, query, where } from 'firebase/firestore'
@@ -33,7 +33,7 @@ function ItemListContainer() {
         }
 
         fetchItems()
-    }, [categoryId]) // Añadir categoryId como dependencia del useEffect
+    }, [categoryId])
 
     return <section>{loading ? <Spinner /> : <ItemList items={items} />}</section>
 }

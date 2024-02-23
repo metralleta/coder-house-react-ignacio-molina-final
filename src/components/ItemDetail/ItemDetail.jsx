@@ -6,7 +6,7 @@ import { CartContext } from '../../context/CartContext'
 function ItemDetail({ itemDetail }) {
     const [quantityAdded, setQuantityAdded] = useState(0)
 
-    const { addItem, cart } = useContext(CartContext)
+    const { addItem } = useContext(CartContext)
 
     const handleAdd = (count) => {
         setQuantityAdded(count)
@@ -17,7 +17,6 @@ function ItemDetail({ itemDetail }) {
             price: itemDetail.price,
             image: itemDetail.image,
             description: itemDetail.description,
-            quantity: count,
         }
 
         addItem(item, count)
