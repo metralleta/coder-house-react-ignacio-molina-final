@@ -14,6 +14,7 @@ function Checkout() {
     const handleSubmit = async (e) => {
         e.preventDefault()
 
+        // Sumo el valor total de los artículos en el carrito
         const totalAmount = cart.reduce((acc, item) => acc + item.item.price * item.quantity, 0)
 
         const order = {
@@ -30,11 +31,14 @@ function Checkout() {
         try {
             const docRef = await addDoc(ordersCart, order)
             setOrderId(docRef.id)
+
+            // Limpio el carrito y los campos del formulario
             clearCart()
             setName('')
             setEmail('')
         } catch (error) {
             console.error('Error adding document: ', error)
+            // TODO: Mostrar mensaje de error al usuario en un componente Error
         }
     }
 

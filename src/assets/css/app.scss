@@ -342,3 +342,42 @@ button:hover {
         color: var(--first);
     }
 }
+
+/* 404 */
+/* Estilos para la página Error404 */
+.error404-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    text-align: center;
+    padding: 20px;
+
+    .error-code {
+        font-size: 6rem;
+        font-weight: bold;
+        color: var(--color);
+    }
+
+    .error-message {
+        font-size: 2rem;
+        margin: 20px 0;
+        color: var(--first);
+    }
+
+    .home-link {
+        padding: 10px 20px;
+        background-color: var(--color);
+        color: var(--second);
+        border-radius: 4px;
+        text-decoration: none;
+        font-size: 1rem;
+        transition: all 0.3s;
+
+        &:hover {
+            background-color: #eaeaea;
+            color: var(--color);
+        }
+    }
+}

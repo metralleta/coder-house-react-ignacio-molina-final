@@ -9,6 +9,7 @@ function CartWidget() {
     return (
         <div className="widget">
             <Link to="/cart">
+                {/* El carrito se muestra siempre, pero si está vacío no se muestra el número de items */}
                 <img src={cartIcon} alt="Cart Icon" width={45} height={45} />
                 {cart.length === 0 ? null : <span>{cart.length}</span>}
             </Link>

@@ -8,6 +8,7 @@ function ItemDetail({ itemDetail }) {
 
     const { addItem } = useContext(CartContext)
 
+    // Agrego un item al carrito
     const handleAdd = (count) => {
         setQuantityAdded(count)
 
