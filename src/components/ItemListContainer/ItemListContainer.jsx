@@ -19,11 +19,11 @@ function ItemListContainer() {
             const itemsCollection = collection(db, 'articulos')
 
             try {
-                let query
+                let q
                 if (categoryId) {
-                    query = query(itemsCollection, where('category', '==', categoryId))
+                    q = query(itemsCollection, where('category', '==', categoryId))
                 } else {
-                    query = query(itemsCollection)
+                    q = query(itemsCollection)
                 }
                 const querySnapshot = await getDocs(q)
                 const itemsArray = querySnapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }))
