@@ -28,3 +28,37 @@ Para instalar y ejecutar este proyecto localmente, sigue estos pasos:
 ```bash
 git clone URL_DEL_REPOSITORIO
 ```
+
+2. Navega al directorio del proyecto:
+
+```bash
+cd NOMBRE_DEL_DIRECTORIO
+```
+
+3. Instala las dependencias del proyecto:
+
+```bash
+npm install
+```
+
+## Ejecución
+
+Para iniciar el servidor de desarrollo y ver el proyecto en acción, ejecuta:
+
+```bash
+npm run dev
+```
+
+Para construir el proyecto para producción y ejecutar el servidor de producción, utiliza:
+
+```bash
+npm run build
+```
+
+## Contacto
+
+Si tienes alguna pregunta o te gustaría contactarme, por favor, envíame un correo a [ignacio.e.molina@example.com](mailto:ignacio.e.molina@example.com).
+
+---
+
+Hecho con 💖 por Ignacio Molina.
