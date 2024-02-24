@@ -6,6 +6,7 @@ Bienvenido al repositorio del proyecto final de React para el curso de CoderHous
 
 -   **Catálogo de Productos**: Explora nuestra amplia gama de productos en tecnología y moda.
 -   **Carrito de Compras**: Agrega productos a tu carrito y gestiona tu pedido con facilidad.
+-   **Base de datos**: Las imagenes, artículos y ordenes de compra se almacena en una base de datos de firestore.
 -   **Checkout y Orden**: Finaliza tu compra y recibe un ID de orden único, almacenado en Firestore.
 -   **Carga Asíncrona**: Todas las interacciones con la base de datos Firestore se manejan de manera asíncrona con `async` y `await`.
 -   **Spinner de Carga**: Mejora la experiencia del usuario durante los tiempos de carga.
